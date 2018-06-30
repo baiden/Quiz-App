@@ -5,7 +5,10 @@ An Android Basics Nano degree course project from Udacity
 
 **Bitest** is a food quiz project which tests one's knowledge of popular African diets.
 
-**Android Tags:** *#cardview*
+<a href="https://imgflip.com/gif/2d63qd"><img src="https://i.imgflip.com/2d63qd.gif" title="made at imgflip.com"/></a>
+<a href="https://imgflip.com/gif/2d63yl"><img src="https://i.imgflip.com/2d63yl.gif" title="made at imgflip.com"/></a>
+
+**Android Tags:** *#cardview* *#scrollview* *#linearlayout* *#relativelayout* *#intent* *#radiobutton* *#checkbox* *#edittext* 
 
 **Layout type:** Single Activity
 

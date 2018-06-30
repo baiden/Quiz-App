@@ -1,0 +1,400 @@
+package com.example.android.quizapp2;
+
+import android.content.ActivityNotFoundException;
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import android.support.design.widget.Snackbar;
+import android.support.design.widget.TextInputEditText;
+import android.support.v4.view.ViewCompat;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.support.v7.widget.CardView;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+    Toolbar toolbar;
+    int totalQuizScore = 0; //Total Quiz Score
+    int eachQuizScore = 20; // Score for each question except the bonus question
+    int bonusQuizScore = 20;
+
+    int questionOneResults = 0;
+    int questionTwoResults = 0;
+    int questionThreeResults = 0;
+    int questionFourResults = 0;
+    int questionFiveResults = 0;
+
+    //Question 1
+    private RadioGroup questionOneRadioGroup;
+    private boolean checked1;
+
+    //Question 2
+    CheckBox withBanku;
+    CheckBox withLuwonbo;
+    CheckBox withIrio;
+    CheckBox withEba;
+    private boolean isBanku;
+    private boolean isLuwonbo;
+    private boolean isIrio;
+    private boolean isEba;
+
+    //Question 3
+    CheckBox withNigeriaQ3;
+    CheckBox withGhanaQ3;
+    CheckBox withTunisia;
+    CheckBox withWakanda;
+    private boolean isNigeriaQ3;
+    private boolean isGhanaQ3;
+    private boolean isTunisia;
+    private boolean isWakanda;
+
+    //Question 4
+    EditText questionFourEditText;
+
+    //Bonus Question
+    CheckBox withNigeria;
+    CheckBox withGhana;
+    private boolean isNigeria;
+    private boolean isGhana;
+
+    //User's name
+    TextInputEditText name_textInputEditText;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        //Sets the screen to fullscreen
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.activity_main);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+
+    }
+
+    //Submits the user's name and scores
+    public void submitResults(View view) {
+
+        //Question 2's Checkboxes
+        withBanku = (CheckBox) findViewById(R.id.bankuCheckBox);
+        withLuwonbo = (CheckBox) findViewById(R.id.luwonboCheckBox);
+        withIrio = (CheckBox) findViewById(R.id.irioCheckBox);
+        withEba = (CheckBox) findViewById(R.id.ebaCheckBox);
+        isBanku = withBanku.isChecked();
+        isLuwonbo = withLuwonbo.isChecked();
+        isIrio = withIrio.isChecked();
+        isEba = withEba.isChecked();
+
+        //Question 3's Checkboxes
+        withNigeriaQ3 = (CheckBox) findViewById(R.id.nigeriaQ3CheckBox);
+        withGhanaQ3 = (CheckBox) findViewById(R.id.ghanaQ3CheckBox);
+        withTunisia = (CheckBox) findViewById(R.id.tunisiaCheckBox);
+        withWakanda = (CheckBox) findViewById(R.id.wakandaCheckBox);
+        isNigeriaQ3 = withNigeriaQ3.isChecked();
+        isGhanaQ3 = withGhanaQ3.isChecked();
+        isTunisia = withTunisia.isChecked();
+        isWakanda = withWakanda.isChecked();
+
+        //Question 4's EditText
+        questionFourEditText = (EditText) findViewById(R.id.question_4EditTextID);
+        String questionFourInput = questionFourEditText.getText().toString();
+
+        //Question 5's Checkboxes
+        withNigeria = (CheckBox)findViewById(R.id.nigeriaCheckBox);
+        withGhana = (CheckBox)findViewById(R.id.ghanaCheckBox);
+        isNigeria = withNigeria.isChecked();
+        isGhana = withGhana.isChecked();
+
+        /* ***** Validates Question 1 ****/
+        if (checked1){
+            /* *********** Validates Question 2 ******************************/
+            if (!isBanku && !isLuwonbo && !isIrio && !isEba)
+            {
+                Toast.makeText(this, "Question 2 can't be left unanswered!", Toast.LENGTH_SHORT).show();
+                resetScoreValues();
+            }
+            else {
+
+                /* *********** Validates Question 3 ******************************/
+                if (!isNigeriaQ3 && !isGhanaQ3 && !isTunisia && !isWakanda)
+                {
+                    Toast.makeText(this, "Question 3 can't be left unanswered!", Toast.LENGTH_SHORT).show();
+                    resetScoreValues();
+                }
+                else {
+
+                    /* *********** Validates Question 4 ******************************/
+                    if (questionFourInput.length()==0){
+                        questionFourEditText.requestFocus();
+                        questionFourEditText.setError("FIELD CANNOT BE EMPTY!");
+                        resetScoreValues();
+                    }
+                    else if(!questionFourInput.matches("[a-zA-Z ]+")){
+                        questionFourEditText.requestFocus();
+                        questionFourEditText.setError("ENTER ONLY ALPHABETICAL CHARACTERS!");
+                        resetScoreValues();
+                    }
+                    else {
+
+                        /* *********** Validates Question 5 ******************************/
+                        if (!isNigeria && !isGhana)
+                        {
+                            Toast.makeText(this, "Bonus Question can't be left unanswered!", Toast.LENGTH_SHORT).show();
+                            resetScoreValues();
+                        }
+                        else {
+
+                            totalQuizScore = computeTotalQuizScore(isBanku, isLuwonbo, isIrio, isEba, isNigeriaQ3, isGhanaQ3, isTunisia, isWakanda,
+                                    questionFourInput, isNigeria, isGhana);
+                            questionTwoResults = getQuestionTwoScore(isBanku, isLuwonbo, isIrio, isEba);
+                            questionThreeResults = getQuestionThreeScore(isNigeriaQ3, isGhanaQ3, isTunisia, isWakanda);
+                            questionFourResults = getQuestionFourScore(questionFourInput);
+                            questionFiveResults = getQuestionFiveScore(isNigeria, isGhana);
+
+                            name_textInputEditText = (TextInputEditText) findViewById(R.id.name_textInputEditText);
+                            String name = name_textInputEditText.getText().toString();
+
+                            /* ************ Validates User's name *****************/
+                            if (name.length()==0){
+                                name_textInputEditText.requestFocus();
+                                name_textInputEditText.setError("FIELD CANNOT BE EMPTY!");
+                            }
+                            else if(!name.matches("[a-zA-Z ]+")){
+                                name_textInputEditText.requestFocus();
+                                name_textInputEditText.setError("ENTER ONLY ALPHABETICAL CHARACTERS!");
+                            }
+                            else {
+
+                            if (totalQuizScore >= 60 ){
+
+                                String scoreMessage = createScoreSummary(name, totalQuizScore);
+                                if (totalQuizScore >= 80){
+                                    Toast.makeText(this, scoreMessage + "Bravo! :)", Toast.LENGTH_LONG).show();
+                                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=rW6M8D41ZWU")));
+                                }
+                                else {
+                                    Toast.makeText(this, scoreMessage + "Not bad, better luck next time ;)", Toast.LENGTH_LONG).show();
+                                }
+                            }
+                            if (totalQuizScore <= 59){
+                                String scoreMessage = createScoreSummary(name, totalQuizScore);
+                                Toast.makeText(this, scoreMessage + " Try again :(", Toast.LENGTH_LONG).show();
+                            }
+
+                            }
+                        }
+
+                    }
+                }
+
+            }
+        }
+        else {
+            Toast.makeText(this, "Question 1 can't be left unanswered!", Toast.LENGTH_SHORT).show();
+            resetScoreValues();
+        }
+
+    }
+
+
+    /**
+     * Computes the Total Quiz Score
+     *
+     *
+     * @return text summary of total Quiz score
+     */
+    private int computeTotalQuizScore(boolean addBanku, boolean addLuwonbo, boolean addIrio, boolean addEba, boolean addNigeriaQ3,
+                                      boolean addGhanaQ3, boolean addTunisia, boolean addWakanda, String questionFourInput, boolean addNigeria, boolean addGhana) {
+        totalQuizScore += questionOneResults;
+        totalQuizScore += getQuestionTwoScore(addBanku, addLuwonbo, addIrio, addEba);
+        totalQuizScore += getQuestionThreeScore(addNigeriaQ3, addGhanaQ3, addTunisia, addWakanda);
+        totalQuizScore += getQuestionFourScore(questionFourInput);
+        totalQuizScore += getQuestionFiveScore(addNigeria, addGhana);
+        return totalQuizScore;
+    }
+
+
+
+    /**
+     * Creates a summary of your score
+     *
+     * @param name              of the user
+     * @param addTotalQuizScore contains the total Quiz Score
+     * @return text summary of quiz scores
+     */
+    public String createScoreSummary(String name, int addTotalQuizScore) {
+        String scoreMessage = "Hi " + name + "!";
+        scoreMessage += "\nYou scored: " + addTotalQuizScore + "%";
+        return scoreMessage;
+    }
+
+
+    /* ****************** Question 1 results ****************************/
+    public void onCheckedQuestion1(View view) {
+        checked1 = ((RadioButton) view).isChecked();
+        switch (view.getId()) {
+            case R.id.yellowRiceOneRadioButton:
+                if (checked1) {
+                    questionOneResults = 0;
+                    break;
+                }
+            case R.id.jollofRiceOneRadioButton:
+                if (checked1) {
+                    questionOneResults = eachQuizScore;
+                    break;
+                }
+            case R.id.wheatRiceOneRadioButton:
+                if (checked1) {
+                    questionOneResults = 0;
+                    break;
+                }
+
+            case R.id.gumboOneRadioButton:
+                if (checked1){
+                    questionOneResults = 0;
+                    break;
+                }
+        }
+    }
+    /* ****************************** End of Question 1 ***********************************/
+
+
+    /* ****************************** Beginning of Question 2 ***********************************/
+    /**
+     * Gets Question Two's Score
+     *
+     * @param addBanku    adds 5 marks to Question 2's score
+     * @param addLuwonbo adds 5 marks to Question 2's score
+     * @param addLuwonbo  sets Question 2's score to 0
+     * @param addEba      adds 5 marks to Question 2's score
+     * @return text summary of Question 2's score
+     */
+    public int getQuestionTwoScore(boolean addBanku, boolean addLuwonbo, boolean addIrio, boolean addEba) {
+        int eachScore = (eachQuizScore / 2);
+        if (addBanku) {
+            questionTwoResults += eachScore; //Correct answer
+        }
+        if (addLuwonbo) {
+            questionTwoResults += -eachScore; //Wrong answer, hence a penalty of 10 marks is deducted
+        }
+        if (addIrio) {
+            questionTwoResults += -eachScore; //Wrong answer, hence a penalty of 10 marks is deducted
+        }
+        if (addEba) {
+            questionTwoResults += eachScore; //Correct answer
+        }
+        if (questionTwoResults < 0){
+            questionTwoResults = 0;
+        }
+
+        return questionTwoResults;
+    }
+
+   /* ****************************** End of Question 2 ***********************************/
+
+
+
+
+    /* ****************************** Beginning of Question 3 ***********************************/
+    /**
+     * Gets Question Three's Score
+     *
+     * @param addNigeriaQ3    adds 5 marks to Question 3's score
+     * @param addGhanaQ3  adds 5 marks to Question 3's score
+     * @param addTunisia sets Question 3's score to 0
+     * @param addWakanda  adds 5 marks to Question 3's score
+     * @return text summary of Question 3's score
+     */
+    public int getQuestionThreeScore(boolean addNigeriaQ3, boolean addGhanaQ3, boolean addTunisia, boolean addWakanda) {
+        int forEachScore = (eachQuizScore / 2);
+        if (addNigeriaQ3) {
+            questionThreeResults += forEachScore; //Correct answer
+        }
+        if (addGhanaQ3) {
+            questionThreeResults += forEachScore; //Correct answer
+        }
+        if (addTunisia) {
+            questionThreeResults += -forEachScore; //Wrong answer, hence a penalty of 5 marks is deducted
+        }
+        if (addWakanda) {
+            questionThreeResults += -forEachScore; //Wrong answer, hence a penalty of 5 marks is deducted
+        }
+
+        if (questionThreeResults < 0){
+            questionThreeResults = 0;
+        }
+        return questionThreeResults;
+    }
+    /* ****************************** End of Question 3 ***********************************/
+
+
+
+
+    /* ****************************** Beginning of Question 4 ***********************************/
+    /**
+     * Gets Question Four's Score
+     *
+     * @param questionFourInput adds 15 marks to Question 4's score
+     * @return text summary of Question 4's score
+     */
+    public int getQuestionFourScore(String questionFourInput) {
+        if (questionFourInput.equals("South Africa") || questionFourInput.equals("south africa")) {
+            questionFourResults += eachQuizScore;
+        } 
+        else {
+            questionFourResults = 0;
+        }
+        return questionFourResults;
+    }
+    /* ****************************** End of Question 4 ***********************************/
+
+
+
+    /* ****************************** Beginning of Bonus Question ***********************************/
+    /**
+     * Gets Bonus Question's Score
+     *
+     * @param addNigeria adds 15 marks to Bonus Question's score
+     * @param addGhana adds 15 marks to Bonus Question's score
+     * @return text summary of Bonus Question's score
+     */
+    public int getQuestionFiveScore(boolean addNigeria, boolean addGhana){
+        if (addNigeria){
+            questionFiveResults = bonusQuizScore;
+        }
+        if (addGhana){
+            questionFiveResults = bonusQuizScore;
+        }
+
+        if (addNigeria && addGhana){
+            questionFiveResults = bonusQuizScore;
+        }
+        return questionFiveResults;
+    }
+    /* ****************************** End of Bonus Question ***********************************/
+
+
+
+    /* ******* Resets the values whenever a question is skipped so that it doesn't affect the final score ****************/
+    public void resetScoreValues(){
+        questionOneResults = 0;
+        questionTwoResults = 0;
+        questionThreeResults = 0;
+        questionFourResults = 0;
+        questionFiveResults = 0;
+    }
+
+    public void tryAgain(View view) {
+        Intent intent = getIntent();
+        finish();
+        startActivity(intent);
+    }
+
+}

@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:id="@+id/sc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f5f5f5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            android:orientation="vertical">
+
+
+            <!--&lt;!&ndash;Beginning Of Quiz Title CardView&ndash;&gt;-->
+            <!--<android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_marginBottom="8dp"-->
+                <!--android:layout_marginLeft="16dp"-->
+                <!--android:layout_marginRight="16dp"-->
+                <!--android:layout_marginTop="16dp"-->
+                <!--android:elevation="4dp"-->
+                <!--android:nestedScrollingEnabled="false"-->
+                <!--card_view:cardCornerRadius="4dp">-->
+
+                <!--<RelativeLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:background="#fff">-->
+
+                    <!--<ImageView-->
+                        <!--android:id="@+id/bg_img"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:adjustViewBounds="true"-->
+                        <!--android:elevation="4dp"-->
+                        <!--android:src="@drawable/backy" />-->
+
+                <!--</RelativeLayout>-->
+            <!--</android.support.v7.widget.CardView>-->
+            <!--&lt;!&ndash;End Of Quiz Title CardView&ndash;&gt;-->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Let's begin :) "
+                android:textStyle="bold"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textSize="11sp"
+                android:text="Hint: Scroll down"
+                android:layout_marginBottom="50dp"/>
+
+            <!-- Beginning of Question 1 Card View -->
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/question_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:elevation="4dp"
+                app:cardBackgroundColor="@android:color/white"
+                card_view:cardCornerRadius="4dp">
+
+                <!--Parent layout of question text-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/img1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/jollof" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Question 1"
+                        android:textStyle="bold"
+                        android:layout_marginLeft="26dp"/>
+
+                    <!--Parent layout of question text-->
+                    <RadioGroup
+                        android:id="@+id/questionOneRadioGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="16dp">
+
+                            <RadioButton
+                                android:id="@+id/yellowRiceOneRadioButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Yellow Rice with Chickhen"
+                                android:padding="8dp"
+                                android:layout_marginLeft="24dp"
+                                android:layout_marginRight="24dp"
+                                android:onClick="onCheckedQuestion1"/>
+
+                            <RadioButton
+                                android:id="@+id/jollofRiceOneRadioButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:layout_marginLeft="24dp"
+                                android:layout_marginRight="24dp"
+                                android:text="Jollof Rice with with Chicken"
+                                android:onClick="onCheckedQuestion1"/>
+
+                            <RadioButton
+                                android:id="@+id/wheatRiceOneRadioButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:layout_marginLeft="24dp"
+                                android:layout_marginRight="24dp"
+                                android:text="Wheat Rice with Chicken"
+                                android:onClick="onCheckedQuestion1"/>
+
+                            <RadioButton
+                                android:id="@+id/gumboOneRadioButton"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:padding="8dp"
+                                android:layout_marginLeft="24dp"
+                                android:layout_marginRight="24dp"
+                                android:text="Gumbo with Chicken"
+                                android:onClick="onCheckedQuestion1"/>
+
+                    </RadioGroup>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <!--End of Question 1 Card View-->
+
+            <!-- Beginning of Question 2 Card View -->
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/question_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="16dp"
+                android:layout_marginBottom="16dp"
+                android:elevation="4dp"
+                app:cardBackgroundColor="@android:color/white"
+                card_view:cardCornerRadius="4dp">
+
+                <!--Parent layout of question text-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Question 2: Egusi is usually eaten with?"
+                        android:textStyle="bold"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginLeft="26dp"
+                        android:layout_marginBottom="10dp" />
+
+                    <CheckBox
+                        android:id="@+id/bankuCheckBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="Banku" />
+
+                    <CheckBox
+                        android:id="@+id/luwonboCheckBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="Luwonbo" />
+
+                    <CheckBox
+                        android:id="@+id/irioCheckBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="Irio" />
+
+                    <CheckBox
+                        android:id="@+id/ebaCheckBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="Eba"
+                        android:layout_marginBottom="16dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:textSize="11sp"
+                        android:text="Hint: You can select more than one option"/>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <!--End of Question 2 Card View-->
+
+            <!-- Beginning of Question 3 Card View -->
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/question_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="16dp"
+                android:layout_marginBottom="16dp"
+                android:elevation="4dp"
+                app:cardBackgroundColor="@android:color/white"
+                card_view:cardCornerRadius="4dp">
+
+                <!--Parent layout of question text-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Question 3: Fufu is popular in which country? "
+                        android:textStyle="bold"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginLeft="26dp"
+                        android:layout_marginBottom="16dp"/>
+
+                    <CheckBox
+                        android:id="@+id/nigeriaQ3CheckBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="Nigeria"/>
+
+                    <CheckBox
+                        android:id="@+id/ghanaQ3CheckBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="Ghana"/>
+
+                    <CheckBox
+                        android:id="@+id/tunisiaCheckBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="Tunisia"/>
+
+                    <CheckBox
+                        android:id="@+id/wakandaCheckBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="24dp"
+                        android:text="Wakanda"
+                        android:layout_marginBottom="16dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:textSize="11sp"
+                        android:text="Hint: You can select more than one option"/>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <!-- End of Question 3 Card View -->
+
+            <!-- Beginning of Question 4 Card View -->
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/question_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="16dp"
+                android:layout_marginBottom="16dp"
+                android:elevation="4dp"
+                app:cardBackgroundColor="@android:color/white"
+                card_view:cardCornerRadius="4dp">
+
+                <!--Parent layout of question text-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!--<ImageView-->
+                        <!--android:id="@+id/img4"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:adjustViewBounds="true"-->
+                        <!--android:src="@drawable/eugusi" />-->
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Question 4"
+                        android:textStyle="bold"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="26dp"
+                        android:layout_margin="16dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="Chakalaka is a popular local food"
+                        android:layout_marginTop="8dp" />
+
+                    <EditText
+                        android:id="@+id/question_4EditTextID"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginRight="24dp"
+                        android:layout_marginBottom="20dp"
+                        android:hint="Which country is it found in?"
+                        android:layout_margin="16dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:textSize="11sp"
+                        android:text="Hint: It is common among in the southern part of Africa"
+                        android:layout_marginBottom="16dp"/>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!-- Beginning of Bonus Question Card View -->
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/bonusQuestion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="16dp"
+                android:layout_marginBottom="16dp"
+                android:elevation="4dp"
+                app:cardBackgroundColor="@android:color/white"
+                card_view:cardCornerRadius="4dp">
+
+                <!--Parent layout of question text-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp">
+
+                    <ImageView
+                        android:id="@+id/item_image2"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/jollof"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/item_questionNumber2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bonus Question"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="5dp"/>
+
+                        <TextView
+                            android:id="@+id/item_question2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Who prepares it better?"
+                            android:layout_marginLeft="5dp"/>
+
+                        <LinearLayout
+                            android:id="@+id/item_possibleAnswer2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:id="@+id/nigeriaCheckBox"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Nigeria"/>
+
+                            <CheckBox
+                                android:id="@+id/ghanaCheckBox"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Ghana"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+            <!--End of Bonus Question Card View-->
+
+            <!-- Beginning Of User's Details -->
+            <RelativeLayout
+                android:id="@+id/details_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/name_textInputLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="16dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:id="@+id/name_textInputEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Enter your name here:" />
+                </android.support.design.widget.TextInputLayout>
+
+                <Button
+                    android:id="@+id/submitResults"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@id/name_textInputLayout"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginRight="16dp"
+                    android:background="#03a9f4"
+                    android:elevation="4dp"
+                    android:text="Submit"
+                    android:onClick="submitResults"
+                    android:textColor="#fff"/>
+
+                <Button
+                    android:id="@+id/tryAgain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/name_textInputLayout"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginRight="16dp"
+                    android:background="#00796b"
+                    android:elevation="4dp"
+                    android:text="Try Again"
+                    android:onClick="tryAgain"
+                    android:textColor="#fff"/>
+            </RelativeLayout>
+            <!-- End Of User's Details -->
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

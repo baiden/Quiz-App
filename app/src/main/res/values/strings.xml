@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Quiz App</string>
+    <string name="questionOneSubmit_btn">Sent</string>
+    <string name="questionOneNotSubmit_btn">Error</string>
+
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+    <string name="slide_1_title">Go local!</string>
+    <string name="slide_1_desc">Prove your Africanity :D</string>
+
+    <string name="slide_2_title">Soup</string>
+    <string name="slide_2_desc">Book movie tickets for your family and friends!</string>
+
+    <string name="slide_3_title">Get Ready!</string>
+    <string name="slide_3_desc">Read the guide before you begin :)</string>
+
+    <string name="slide_4_title">Guide</string>
+    <string name="slide_4_desc">Indicate by checking the correct \nanswer for the displayed image.</string>
+    <string name="slide_4b_desc">NB: Each question is 20 marks \n\t\t\t Bonus question is 40 marks \n\t\t\t Good luck!</string>
+
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
+</resources>

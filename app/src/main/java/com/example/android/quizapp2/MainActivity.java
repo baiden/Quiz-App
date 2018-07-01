@@ -353,7 +353,7 @@ public class MainActivity extends AppCompatActivity {
     public int getQuestionFourScore(String questionFourInput) {
         if (questionFourInput.equals("South Africa") || questionFourInput.equals("south africa")) {
             questionFourResults += eachQuizScore; //Correct answer
-        } 
+        }
         else {
             questionFourResults = 0; //Wrong answer
         }
@@ -392,7 +392,7 @@ public class MainActivity extends AppCompatActivity {
 
     /* ******* Resets the values whenever a question is skipped so that it doesn't affect the final score ****************/
     public void resetScoreValues(){
-        questionOneResults = 0;
+//        questionOneResults = 0;
         questionTwoResults = 0;
         questionThreeResults = 0;
         questionFourResults = 0;

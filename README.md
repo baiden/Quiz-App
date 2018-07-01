@@ -28,4 +28,6 @@ The entire development journey was fun yet challenging having want to make a rea
 # Extras
 **Intro Slider:** https://www.androidhive.info/2016/05/android-build-intro-slider-app/
 
-**Splash Screen:** https://www.youtube.com/watch?v=ZZkanr8tS6w 
+**Splash Screen:** https://www.youtube.com/watch?v=ZZkanr8tS6w
+
+**Link to apk:** https://drive.google.com/drive/folders/1D861Ie_rGkPKDEP9ve5tc8Vd-IscRMkX?usp=sharing

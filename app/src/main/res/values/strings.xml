@@ -18,7 +18,7 @@
 
     <string name="slide_4_title">Guide</string>
     <string name="slide_4_desc">Indicate by checking the correct \nanswer for the displayed image.</string>
-    <string name="slide_4b_desc">NB: Each question is 20 marks \n\t\t\t Bonus question is 40 marks \n\t\t\t Good luck!</string>
+    <string name="slide_4b_desc">NB: Each question is 20 marks \n\t\t\t Bonus question is 20 marks \n\t\t\t Good luck!</string>
 
     <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
     <string name="play_again">Play Again</string>

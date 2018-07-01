@@ -165,10 +165,12 @@ public class MainActivity extends AppCompatActivity {
                             if (name.length()==0){
                                 name_textInputEditText.requestFocus();
                                 name_textInputEditText.setError("FIELD CANNOT BE EMPTY!");
+                                resetScoreValues();
                             }
                             else if(!name.matches("[a-zA-Z ]+")){
                                 name_textInputEditText.requestFocus();
                                 name_textInputEditText.setError("ENTER ONLY ALPHABETICAL CHARACTERS!");
+                                resetScoreValues();
                             }
                             else {
 

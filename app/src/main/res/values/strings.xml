@@ -22,4 +22,32 @@
 
     <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
     <string name="play_again">Play Again</string>
+    <string name="resultsSubmitted">Sent</string>
+    <string name="let_s_begin">Let\'s begin :)</string>
+    <string name="hint_scroll_down">Hint: Scroll down</string>
+    <string name="question_1">Question 1</string>
+    <string name="yellow_rice_with_chickhen">Yellow Rice with Chickhen</string>
+    <string name="jollof_rice_with_chicken">Jollof Rice with Chicken</string>
+    <string name="wheat_rice_with_chicken">Wheat Rice with Chicken</string>
+    <string name="gumbo_with_chicken">Gumbo with Chicken</string>
+    <string name="question_2_egusi_is_usually_eaten_with">Question 2: Egusi is usually eaten with?</string>
+    <string name="banku">Banku</string>
+    <string name="luwonbo">Luwonbo</string>
+    <string name="irio">Irio</string>
+    <string name="eba">Eba</string>
+    <string name="question_3_fufu_is_popular_in_which_country">Question 3: Fufu is popular in which country?</string>
+    <string name="tunisia">Tunisia</string>
+    <string name="wakanda">Wakanda</string>
+    <string name="hint_you_can_select_more_than_one_option">Hint: You can select more than one option</string>
+    <string name="question_4">Question 4</string>
+    <string name="chakalaka_is_a_popular_local_food">Chakalaka is a popular local food</string>
+    <string name="which_country_is_it_found_in">Which country is it found in?</string>
+    <string name="hint_it_is_common_in_the_southern_part_of_africa">Hint: It is common in the southern part of Africa</string>
+    <string name="bonus_question">Bonus Question</string>
+    <string name="who_prepares_it_better">Who prepares it better?</string>
+    <string name="nigeria">Nigeria</string>
+    <string name="ghana">Ghana</string>
+    <string name="enter_your_name_here">Enter your name here:</string>
+    <string name="submit">Submit</string>
+    <string name="try_again">Try Again</string>
 </resources>

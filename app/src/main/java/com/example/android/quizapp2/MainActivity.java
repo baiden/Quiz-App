@@ -151,12 +151,12 @@ public class MainActivity extends AppCompatActivity {
                         }
                         else {
 
-                            totalQuizScore = computeTotalQuizScore(isBanku, isLuwonbo, isIrio, isEba, isNigeriaQ3, isGhanaQ3, isTunisia, isWakanda,
-                                    questionFourInput, isNigeria, isGhana);
-                            questionTwoResults = getQuestionTwoScore(isBanku, isLuwonbo, isIrio, isEba);
-                            questionThreeResults = getQuestionThreeScore(isNigeriaQ3, isGhanaQ3, isTunisia, isWakanda);
-                            questionFourResults = getQuestionFourScore(questionFourInput);
-                            questionFiveResults = getQuestionFiveScore(isNigeria, isGhana);
+                                totalQuizScore = computeTotalQuizScore(isBanku, isLuwonbo, isIrio, isEba, isNigeriaQ3, isGhanaQ3, isTunisia, isWakanda,
+                                        questionFourInput, isNigeria, isGhana);
+                                questionTwoResults = getQuestionTwoScore(isBanku, isLuwonbo, isIrio, isEba);
+                                questionThreeResults = getQuestionThreeScore(isNigeriaQ3, isGhanaQ3, isTunisia, isWakanda);
+                                questionFourResults = getQuestionFourScore(questionFourInput);
+                                questionFiveResults = getQuestionFiveScore(isNigeria, isGhana);
 
                             name_textInputEditText = (TextInputEditText) findViewById(R.id.name_textInputEditText);
                             String name = name_textInputEditText.getText().toString();
@@ -176,16 +176,19 @@ public class MainActivity extends AppCompatActivity {
 
                                 String scoreMessage = createScoreSummary(name, totalQuizScore);
                                 if (totalQuizScore >= 80){
-                                    Toast.makeText(this, scoreMessage + "Bravo! :)", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(this, scoreMessage + " Bravo! :)", Toast.LENGTH_LONG).show();
+                                    disableSubmitButton();
                                     startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=rW6M8D41ZWU")));
                                 }
                                 else {
-                                    Toast.makeText(this, scoreMessage + "Not bad, better luck next time ;)", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(this, scoreMessage + " Not bad, better luck next time ;)", Toast.LENGTH_LONG).show();
+                                    disableSubmitButton();
                                 }
                             }
                             if (totalQuizScore <= 59){
                                 String scoreMessage = createScoreSummary(name, totalQuizScore);
                                 Toast.makeText(this, scoreMessage + " Try again :(", Toast.LENGTH_LONG).show();
+                                disableSubmitButton();
                             }
 
                             }
@@ -212,11 +215,12 @@ public class MainActivity extends AppCompatActivity {
      */
     private int computeTotalQuizScore(boolean addBanku, boolean addLuwonbo, boolean addIrio, boolean addEba, boolean addNigeriaQ3,
                                       boolean addGhanaQ3, boolean addTunisia, boolean addWakanda, String questionFourInput, boolean addNigeria, boolean addGhana) {
-        totalQuizScore += questionOneResults;
-        totalQuizScore += getQuestionTwoScore(addBanku, addLuwonbo, addIrio, addEba);
-        totalQuizScore += getQuestionThreeScore(addNigeriaQ3, addGhanaQ3, addTunisia, addWakanda);
-        totalQuizScore += getQuestionFourScore(questionFourInput);
-        totalQuizScore += getQuestionFiveScore(addNigeria, addGhana);
+
+            totalQuizScore += questionOneResults;
+            totalQuizScore += getQuestionTwoScore(addBanku, addLuwonbo, addIrio, addEba);
+            totalQuizScore += getQuestionThreeScore(addNigeriaQ3, addGhanaQ3, addTunisia, addWakanda);
+            totalQuizScore += getQuestionFourScore(questionFourInput);
+            totalQuizScore += getQuestionFiveScore(addNigeria, addGhana);
         return totalQuizScore;
     }
 
@@ -225,7 +229,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Creates a summary of your score
      *
-     * @param name              of the user
+     * @param name of the user
      * @param addTotalQuizScore contains the total Quiz Score
      * @return text summary of quiz scores
      */
@@ -242,23 +246,23 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.yellowRiceOneRadioButton:
                 if (checked1) {
-                    questionOneResults = 0;
+                    questionOneResults = 0; //Wrong answer, hence a penalty of 10 marks is deducted
                     break;
                 }
             case R.id.jollofRiceOneRadioButton:
                 if (checked1) {
-                    questionOneResults = eachQuizScore;
+                    questionOneResults = eachQuizScore; //Correct answer
                     break;
                 }
             case R.id.wheatRiceOneRadioButton:
                 if (checked1) {
-                    questionOneResults = 0;
+                    questionOneResults = 0; //Wrong answer, hence a penalty of 10 marks is deducted
                     break;
                 }
 
             case R.id.gumboOneRadioButton:
                 if (checked1){
-                    questionOneResults = 0;
+                    questionOneResults = 0; //Wrong answer, hence a penalty of 10 marks is deducted
                     break;
                 }
         }
@@ -270,10 +274,10 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Gets Question Two's Score
      *
-     * @param addBanku    adds 5 marks to Question 2's score
-     * @param addLuwonbo adds 5 marks to Question 2's score
-     * @param addLuwonbo  sets Question 2's score to 0
-     * @param addEba      adds 5 marks to Question 2's score
+     * @param addBanku    adds 10 marks to Question 2's score
+     * @param addLuwonbo adds 10 marks to Question 2's score
+     * @param addIrio  sets Question 2's score to 0
+     * @param addEba      adds 10 marks to Question 2's score
      * @return text summary of Question 2's score
      */
     public int getQuestionTwoScore(boolean addBanku, boolean addLuwonbo, boolean addIrio, boolean addEba) {
@@ -306,10 +310,10 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Gets Question Three's Score
      *
-     * @param addNigeriaQ3    adds 5 marks to Question 3's score
-     * @param addGhanaQ3  adds 5 marks to Question 3's score
-     * @param addTunisia sets Question 3's score to 0
-     * @param addWakanda  adds 5 marks to Question 3's score
+     * @param addNigeriaQ3    adds 10 marks to Question 3's score
+     * @param addGhanaQ3  adds 10 marks to Question 3's score
+     * @param addTunisia deducts 10 marks from Question 3's score
+     * @param addWakanda  deducts 10 marks from Question 3's score
      * @return text summary of Question 3's score
      */
     public int getQuestionThreeScore(boolean addNigeriaQ3, boolean addGhanaQ3, boolean addTunisia, boolean addWakanda) {
@@ -321,10 +325,10 @@ public class MainActivity extends AppCompatActivity {
             questionThreeResults += forEachScore; //Correct answer
         }
         if (addTunisia) {
-            questionThreeResults += -forEachScore; //Wrong answer, hence a penalty of 5 marks is deducted
+            questionThreeResults += -forEachScore; //Wrong answer, hence a penalty of 10 marks is deducted
         }
         if (addWakanda) {
-            questionThreeResults += -forEachScore; //Wrong answer, hence a penalty of 5 marks is deducted
+            questionThreeResults += -forEachScore; //Wrong answer, hence a penalty of 10 marks is deducted
         }
 
         if (questionThreeResults < 0){
@@ -341,15 +345,15 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Gets Question Four's Score
      *
-     * @param questionFourInput adds 15 marks to Question 4's score
+     * @param questionFourInput adds 20 marks to Question 4's score
      * @return text summary of Question 4's score
      */
     public int getQuestionFourScore(String questionFourInput) {
         if (questionFourInput.equals("South Africa") || questionFourInput.equals("south africa")) {
-            questionFourResults += eachQuizScore;
+            questionFourResults += eachQuizScore; //Correct answer
         } 
         else {
-            questionFourResults = 0;
+            questionFourResults = 0; //Wrong answer
         }
         return questionFourResults;
     }
@@ -361,11 +365,13 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Gets Bonus Question's Score
      *
-     * @param addNigeria adds 15 marks to Bonus Question's score
-     * @param addGhana adds 15 marks to Bonus Question's score
+     * @param addNigeria adds 20 marks to Bonus Question's score if selected
+     * @param addGhana adds 20 marks to Bonus Question's score if selected
      * @return text summary of Bonus Question's score
      */
     public int getQuestionFiveScore(boolean addNigeria, boolean addGhana){
+        //NB: Either option or both of them is correct because everyone is right in his/her own eyes :D
+
         if (addNigeria){
             questionFiveResults = bonusQuizScore;
         }
@@ -395,6 +401,14 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = getIntent();
         finish();
         startActivity(intent);
+    }
+
+    public void disableSubmitButton(){
+        Button submitBtn = (Button)findViewById(R.id.submitResults);
+        submitBtn.setEnabled(false);
+        submitBtn.setBackgroundResource(R.color.colorDanger);
+        submitBtn.setText(R.string.resultsSubmitted);
+
     }
 
 }

@@ -151,13 +151,6 @@ public class MainActivity extends AppCompatActivity {
                         }
                         else {
 
-                                totalQuizScore = computeTotalQuizScore(isBanku, isLuwonbo, isIrio, isEba, isNigeriaQ3, isGhanaQ3, isTunisia, isWakanda,
-                                        questionFourInput, isNigeria, isGhana);
-                                questionTwoResults = getQuestionTwoScore(isBanku, isLuwonbo, isIrio, isEba);
-                                questionThreeResults = getQuestionThreeScore(isNigeriaQ3, isGhanaQ3, isTunisia, isWakanda);
-                                questionFourResults = getQuestionFourScore(questionFourInput);
-                                questionFiveResults = getQuestionFiveScore(isNigeria, isGhana);
-
                             name_textInputEditText = (TextInputEditText) findViewById(R.id.name_textInputEditText);
                             String name = name_textInputEditText.getText().toString();
 
@@ -173,6 +166,13 @@ public class MainActivity extends AppCompatActivity {
                                 resetScoreValues();
                             }
                             else {
+
+                                totalQuizScore = computeTotalQuizScore(isBanku, isLuwonbo, isIrio, isEba, isNigeriaQ3, isGhanaQ3, isTunisia, isWakanda,
+                                        questionFourInput, isNigeria, isGhana);
+                                questionTwoResults = getQuestionTwoScore(isBanku, isLuwonbo, isIrio, isEba);
+                                questionThreeResults = getQuestionThreeScore(isNigeriaQ3, isGhanaQ3, isTunisia, isWakanda);
+                                questionFourResults = getQuestionFourScore(questionFourInput);
+                                questionFiveResults = getQuestionFiveScore(isNigeria, isGhana);
 
                             if (totalQuizScore >= 60 ){
 
@@ -351,7 +351,7 @@ public class MainActivity extends AppCompatActivity {
      * @return text summary of Question 4's score
      */
     public int getQuestionFourScore(String questionFourInput) {
-        if (questionFourInput.equals("South Africa") || questionFourInput.equals("south africa")) {
+        if (questionFourInput.equalsIgnoreCase("South Africa")) {
             questionFourResults += eachQuizScore; //Correct answer
         }
         else {

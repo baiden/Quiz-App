@@ -24,8 +24,8 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
     int totalQuizScore = 0; //Total Quiz Score
-    int eachQuizScore = 20; // Score for each question except the bonus question
-    int bonusQuizScore = 20;
+    int eachQuizScore = 20; // Score for each question
+    int bonusQuizScore = 20; // Score for bonus question
 
     int questionOneResults = 0;
     int questionTwoResults = 0;
@@ -372,7 +372,8 @@ public class MainActivity extends AppCompatActivity {
      * @return text summary of Bonus Question's score
      */
     public int getQuestionFiveScore(boolean addNigeria, boolean addGhana){
-        //NB: Either option or both of them is correct because everyone is right in his/her own eyes :D
+        /* NB: Either option or both of them is correct because everyone is right in his/her own eyes :D
+         Gave the liberty of selecting both options as some people may want that */
 
         if (addNigeria){
             questionFiveResults = bonusQuizScore;

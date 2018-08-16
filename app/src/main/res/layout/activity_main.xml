@@ -7,16 +7,18 @@
     tools:context=".MainActivity"
     android:fillViewport="true">
 
+    <!--Main RelativeLayout-->
     <RelativeLayout
         android:id="@+id/sc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#f5f5f5">
+        android:background="@color/mainRelative_colorGrey">
 
+        <!-- Main LinearLayout -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="120dp"
+            android:layout_marginTop="@dimen/mainLinear_marginTop"
             android:orientation="vertical">
 
             <TextView
@@ -30,9 +32,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:textSize="11sp"
+                android:textSize="@dimen/hintTxt_size"
                 android:text="@string/hint_scroll_down"
-                android:layout_marginBottom="50dp"/>
+                android:layout_marginBottom="@dimen/hintTxt_marginBottom"/>
 
             <!-- Beginning of Question 1 Card View -->
             <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -40,12 +42,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
                 android:elevation="4dp"
                 app:cardBackgroundColor="@android:color/white"
-                card_view:cardCornerRadius="4dp">
+                card_view:cardCornerRadius="@dimen/cardView_cornerRadius">
 
                 <!--Parent layout of question text-->
                 <LinearLayout
@@ -65,7 +67,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/question_1"
                         android:textStyle="bold"
-                        android:layout_marginLeft="26dp"/>
+                        android:layout_marginLeft="@dimen/questions_marginLeft"/>
 
                     <!--Parent layout of question text-->
                     <RadioGroup
@@ -73,25 +75,25 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:layout_marginBottom="16dp">
+                        android:layout_marginBottom="@dimen/activity_vertical_margin">
 
                             <RadioButton
                                 android:id="@+id/yellowRiceOneRadioButton"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/yellow_rice_with_chickhen"
-                                android:padding="8dp"
-                                android:layout_marginLeft="24dp"
-                                android:layout_marginRight="24dp"
+                                android:padding="@dimen/radioButton_padding"
+                                android:layout_marginLeft="@dimen/radioButton_marginLeft"
+                                android:layout_marginRight="@dimen/radioButton_marginRight"
                                 android:onClick="onCheckedQuestion1"/>
 
                             <RadioButton
                                 android:id="@+id/jollofRiceOneRadioButton"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:padding="8dp"
-                                android:layout_marginLeft="24dp"
-                                android:layout_marginRight="24dp"
+                                android:padding="@dimen/radioButton_padding"
+                                android:layout_marginLeft="@dimen/radioButton_marginLeft"
+                                android:layout_marginRight="@dimen/radioButton_marginRight"
                                 android:text="@string/jollof_rice_with_chicken"
                                 android:onClick="onCheckedQuestion1"/>
 
@@ -99,9 +101,9 @@
                                 android:id="@+id/wheatRiceOneRadioButton"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:padding="8dp"
-                                android:layout_marginLeft="24dp"
-                                android:layout_marginRight="24dp"
+                                android:padding="@dimen/radioButton_padding"
+                                android:layout_marginLeft="@dimen/radioButton_marginLeft"
+                                android:layout_marginRight="@dimen/radioButton_marginRight"
                                 android:text="@string/wheat_rice_with_chicken"
                                 android:onClick="onCheckedQuestion1"/>
 
@@ -109,9 +111,9 @@
                                 android:id="@+id/gumboOneRadioButton"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:padding="8dp"
-                                android:layout_marginLeft="24dp"
-                                android:layout_marginRight="24dp"
+                                android:padding="@dimen/radioButton_padding"
+                                android:layout_marginLeft="@dimen/radioButton_marginLeft"
+                                android:layout_marginRight="@dimen/radioButton_marginRight"
                                 android:text="@string/gumbo_with_chicken"
                                 android:onClick="onCheckedQuestion1"/>
 
@@ -127,70 +129,69 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="16dp"
-                android:layout_marginBottom="16dp"
+                android:layout_margin="@dimen/activity_margin"
                 android:elevation="4dp"
                 app:cardBackgroundColor="@android:color/white"
-                card_view:cardCornerRadius="4dp">
+                card_view:cardCornerRadius="@dimen/cardView_cornerRadius">
 
                 <!--Parent layout of question text-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginBottom="16dp">
+                    android:layout_marginBottom="@dimen/activity_vertical_margin">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/question_2_egusi_is_usually_eaten_with"
                         android:textStyle="bold"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginLeft="26dp"
-                        android:layout_marginBottom="10dp" />
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:layout_marginLeft="@dimen/questions_marginLeft"
+                        android:layout_marginBottom="@dimen/questions_marginBottom" />
 
                     <CheckBox
                         android:id="@+id/bankuCheckBox"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:layout_marginLeft="24dp"
-                        android:layout_marginRight="24dp"
+                        android:padding="@dimen/checkBox_padding"
+                        android:layout_marginLeft="@dimen/checkBox_marginLeft"
+                        android:layout_marginRight="@dimen/checkBox_marginRight"
                         android:text="@string/banku" />
 
                     <CheckBox
                         android:id="@+id/luwonboCheckBox"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:layout_marginLeft="24dp"
-                        android:layout_marginRight="24dp"
+                        android:padding="@dimen/checkBox_padding"
+                        android:layout_marginLeft="@dimen/checkBox_marginLeft"
+                        android:layout_marginRight="@dimen/checkBox_marginRight"
                         android:text="@string/luwonbo" />
 
                     <CheckBox
                         android:id="@+id/irioCheckBox"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:layout_marginLeft="24dp"
-                        android:layout_marginRight="24dp"
+                        android:padding="@dimen/checkBox_padding"
+                        android:layout_marginLeft="@dimen/checkBox_marginLeft"
+                        android:layout_marginRight="@dimen/checkBox_marginRight"
                         android:text="@string/irio" />
 
                     <CheckBox
                         android:id="@+id/ebaCheckBox"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:layout_marginLeft="24dp"
-                        android:layout_marginRight="24dp"
+                        android:padding="@dimen/checkBox_padding"
+                        android:layout_marginLeft="@dimen/checkBox_marginLeft"
+                        android:layout_marginRight="@dimen/checkBox_marginRight"
                         android:text="@string/eba"
-                        android:layout_marginBottom="16dp"/>
+                        android:layout_marginBottom="@dimen/activity_vertical_margin"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
-                        android:textSize="11sp"
+                        android:textSize="@dimen/hintTxt_size"
                         android:text="@string/hint_you_can_select_more_than_one_option"/>
                 </LinearLayout>
             </android.support.v7.widget.CardView>
@@ -202,70 +203,69 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="16dp"
-                android:layout_marginBottom="16dp"
+                android:layout_margin="@dimen/activity_margin"
                 android:elevation="4dp"
                 app:cardBackgroundColor="@android:color/white"
-                card_view:cardCornerRadius="4dp">
+                card_view:cardCornerRadius="@dimen/cardView_cornerRadius">
 
                 <!--Parent layout of question text-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginBottom="16dp">
+                    android:layout_marginBottom="@dimen/activity_vertical_margin">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/question_3_fufu_is_popular_in_which_country"
                         android:textStyle="bold"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginLeft="26dp"
-                        android:layout_marginBottom="16dp"/>
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:layout_marginLeft="@dimen/questions_marginLeft"
+                        android:layout_marginBottom="@dimen/activity_vertical_margin"/>
 
                     <CheckBox
                         android:id="@+id/nigeriaQ3CheckBox"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:layout_marginLeft="24dp"
-                        android:layout_marginRight="24dp"
+                        android:padding="@dimen/checkBox_padding"
+                        android:layout_marginLeft="@dimen/checkBox_marginLeft"
+                        android:layout_marginRight="@dimen/checkBox_marginRight"
                         android:text="@string/nigeria"/>
 
                     <CheckBox
                         android:id="@+id/ghanaQ3CheckBox"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:layout_marginLeft="24dp"
-                        android:layout_marginRight="24dp"
+                        android:padding="@dimen/checkBox_padding"
+                        android:layout_marginLeft="@dimen/checkBox_marginLeft"
+                        android:layout_marginRight="@dimen/checkBox_marginRight"
                         android:text="@string/ghana"/>
 
                     <CheckBox
                         android:id="@+id/tunisiaCheckBox"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:layout_marginLeft="24dp"
-                        android:layout_marginRight="24dp"
+                        android:padding="@dimen/checkBox_padding"
+                        android:layout_marginLeft="@dimen/checkBox_marginLeft"
+                        android:layout_marginRight="@dimen/checkBox_marginRight"
                         android:text="@string/tunisia"/>
 
                     <CheckBox
                         android:id="@+id/wakandaCheckBox"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="8dp"
-                        android:layout_marginLeft="24dp"
-                        android:layout_marginRight="24dp"
+                        android:padding="@dimen/checkBox_padding"
+                        android:layout_marginLeft="@dimen/checkBox_marginLeft"
+                        android:layout_marginRight="@dimen/checkBox_marginRight"
                         android:text="@string/wakanda"
-                        android:layout_marginBottom="16dp"/>
+                        android:layout_marginBottom="@dimen/activity_vertical_margin"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
-                        android:textSize="11sp"
+                        android:textSize="@dimen/hintTxt_size"
                         android:text="@string/hint_you_can_select_more_than_one_option"/>
                 </LinearLayout>
             </android.support.v7.widget.CardView>
@@ -277,11 +277,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="16dp"
-                android:layout_marginBottom="16dp"
+                android:layout_margin="@dimen/activity_margin"
                 android:elevation="4dp"
                 app:cardBackgroundColor="@android:color/white"
-                card_view:cardCornerRadius="4dp">
+                card_view:cardCornerRadius="@dimen/cardView_cornerRadius">
 
                 <!--Parent layout of question text-->
                 <LinearLayout
@@ -289,46 +288,39 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <!--<ImageView-->
-                        <!--android:id="@+id/img4"-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:adjustViewBounds="true"-->
-                        <!--android:src="@drawable/eugusi" />-->
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/question_4"
                         android:textStyle="bold"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginLeft="26dp"
-                        android:layout_margin="16dp"/>
+                        android:layout_marginTop="@dimen/question4txt_marginTop"
+                        android:layout_marginLeft="@dimen/questions_marginLeft"
+                        android:layout_margin="@dimen/activity_margin"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:text="@string/chakalaka_is_a_popular_local_food"
-                        android:layout_marginTop="8dp" />
+                        android:layout_marginTop="@dimen/question4txt_marginTop" />
 
                     <EditText
                         android:id="@+id/question_4EditTextID"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="24dp"
-                        android:layout_marginRight="24dp"
-                        android:layout_marginBottom="20dp"
+                        android:layout_marginLeft="@dimen/question4txt_marginLeft"
+                        android:layout_marginRight="@dimen/question4txt_marginRight"
+                        android:layout_marginBottom="@dimen/question4txt_marginBottom"
                         android:hint="@string/which_country_is_it_found_in"
-                        android:layout_margin="16dp"/>
+                        android:layout_margin="@dimen/activity_margin"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
-                        android:textSize="11sp"
+                        android:textSize="@dimen/hintTxt_size"
                         android:text="@string/hint_it_is_common_in_the_southern_part_of_africa"
-                        android:layout_marginBottom="16dp"/>
+                        android:layout_marginBottom="@dimen/activity_vertical_margin"/>
 
                 </LinearLayout>
             </android.support.v7.widget.CardView>
@@ -339,22 +331,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="16dp"
-                android:layout_marginBottom="16dp"
+                android:layout_margin="@dimen/activity_margin"
                 android:elevation="4dp"
                 app:cardBackgroundColor="@android:color/white"
-                card_view:cardCornerRadius="4dp">
+                card_view:cardCornerRadius="@dimen/cardView_cornerRadius">
 
                 <!--Parent layout of question text-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:padding="10dp">
+                    android:padding="@dimen/linearLayout_padding">
 
                     <ImageView
                         android:id="@+id/item_image2"
-                        android:layout_width="150dp"
-                        android:layout_height="150dp"
+                        android:layout_width="@dimen/imageView_layout_width"
+                        android:layout_height="@dimen/imageView_layout_height"
                         android:adjustViewBounds="true"
                         android:src="@drawable/jollof"/>
 
@@ -369,16 +360,16 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/bonus_question"
-                            android:textSize="18sp"
+                            android:textSize="@dimen/bonusQuestion_textSize"
                             android:textStyle="bold"
-                            android:layout_marginLeft="5dp"/>
+                            android:layout_marginLeft="@dimen/bonusQuestion_marginLeft"/>
 
                         <TextView
                             android:id="@+id/item_question2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/who_prepares_it_better"
-                            android:layout_marginLeft="5dp"/>
+                            android:layout_marginLeft="@dimen/bonusQuestion_marginLeft"/>
 
                         <LinearLayout
                             android:id="@+id/item_possibleAnswer2"
@@ -410,15 +401,15 @@
                 android:id="@+id/details_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp">
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin">
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/name_textInputLayout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="16dp">
+                    android:layout_margin="@dimen/activity_margin">
 
                     <android.support.design.widget.TextInputEditText
                         android:id="@+id/name_textInputEditText"
@@ -433,9 +424,9 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_below="@id/name_textInputLayout"
-                    android:layout_marginBottom="20dp"
-                    android:layout_marginRight="16dp"
-                    android:background="#03a9f4"
+                    android:layout_marginBottom="@dimen/button_marginBottom"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:background="@color/submitButton_color"
                     android:elevation="4dp"
                     android:text="@string/submit"
                     android:onClick="submitResults"
@@ -447,9 +438,9 @@
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
                     android:layout_below="@id/name_textInputLayout"
-                    android:layout_marginBottom="20dp"
-                    android:layout_marginRight="16dp"
-                    android:background="#00796b"
+                    android:layout_marginBottom="@dimen/button_marginBottom"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:background="@color/tryagainButton_color"
                     android:elevation="4dp"
                     android:text="@string/try_again"
                     android:onClick="tryAgain"

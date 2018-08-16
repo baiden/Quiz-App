@@ -2,6 +2,9 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_margin">16dp</dimen>
+
+    <!--Intro Slider-->
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="dots_height">30dp</dimen>
     <dimen name="dots_margin_bottom">20dp</dimen>
@@ -9,4 +12,40 @@
     <dimen name="slide_title">30dp</dimen>
     <dimen name="slide_desc">16dp</dimen>
     <dimen name="desc_padding">40dp</dimen>
+
+    <!--Main Layout-->
+    <dimen name="mainLinear_marginTop">120dp</dimen>
+    <dimen name="hintTxt_marginBottom">50dp</dimen>
+    <dimen name="hintTxt_size">12sp</dimen>
+    <dimen name="cardView_cornerRadius">4dp</dimen>
+    <dimen name="questions_marginLeft">26dp</dimen>
+    <dimen name="questions_marginBottom">10dp</dimen>
+
+    <dimen name="radioButton_marginLeft">24dp</dimen>
+    <dimen name="radioButton_marginRight">24dp</dimen>
+    <dimen name="radioButton_padding">8dp</dimen>
+
+    <dimen name="checkBox_padding">8dp</dimen>
+    <dimen name="checkBox_marginLeft">24dp</dimen>
+    <dimen name="checkBox_marginRight">24dp</dimen>
+
+    <!--Question 4-->
+    <dimen name="question4txt_marginTop">8dp</dimen>
+    <dimen name="question4txt_marginLeft">24dp</dimen>
+    <dimen name="question4txt_marginRight">24dp</dimen>
+    <dimen name="question4txt_marginBottom">20dp</dimen>
+
+    <!--Bonus Question-->
+    <dimen name="linearLayout_padding">8dp</dimen>
+    <dimen name="imageView_layout_width">150dp</dimen>
+    <dimen name="imageView_layout_height">150dp</dimen>
+    <dimen name="bonusQuestion_textSize">18sp</dimen>
+    <dimen name="bonusQuestion_marginLeft">5dp</dimen>
+
+    <!--Buttons-->
+    <dimen name="button_marginBottom">20dp</dimen>
+
+
+
+
 </resources>

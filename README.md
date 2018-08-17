@@ -30,4 +30,4 @@ The entire development journey was fun yet challenging having want to make a rea
 
 **Splash Screen:** https://www.youtube.com/watch?v=ZZkanr8tS6w
 
-**Link to apk:** https://drive.google.com/drive/folders/1D861Ie_rGkPKDEP9ve5tc8Vd-IscRMkX?usp=sharing
+**Link to apk:** https://drive.google.com/file/d/11jYt-ZNOo8wrp9R9OhpIPbI-51jh-cuW/view?usp=sharing

@@ -41,11 +41,7 @@
                 android:id="@+id/question_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                android:layout_marginRight="@dimen/activity_horizontal_margin"
-                android:layout_marginBottom="@dimen/activity_vertical_margin"
-                android:elevation="4dp"
+                style="@style/question1_cardView_style"
                 app:cardBackgroundColor="@android:color/white"
                 card_view:cardCornerRadius="@dimen/cardView_cornerRadius">
 
@@ -60,6 +56,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
                         android:src="@drawable/jollof" />
 
                     <TextView
@@ -77,45 +74,37 @@
                         android:orientation="vertical"
                         android:layout_marginBottom="@dimen/activity_vertical_margin">
 
-                            <RadioButton
-                                android:id="@+id/yellowRiceOneRadioButton"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/yellow_rice_with_chickhen"
-                                android:padding="@dimen/radioButton_padding"
-                                android:layout_marginLeft="@dimen/radioButton_marginLeft"
-                                android:layout_marginRight="@dimen/radioButton_marginRight"
-                                android:onClick="onCheckedQuestion1"/>
+                        <RadioButton
+                            android:id="@+id/yellowRiceOneRadioButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/yellow_rice_with_chickhen"
+                            style="@style/radioButton_style"
+                            android:onClick="onCheckedQuestion1"/>
 
-                            <RadioButton
-                                android:id="@+id/jollofRiceOneRadioButton"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:padding="@dimen/radioButton_padding"
-                                android:layout_marginLeft="@dimen/radioButton_marginLeft"
-                                android:layout_marginRight="@dimen/radioButton_marginRight"
-                                android:text="@string/jollof_rice_with_chicken"
-                                android:onClick="onCheckedQuestion1"/>
+                        <RadioButton
+                            android:id="@+id/jollofRiceOneRadioButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/radioButton_style"
+                            android:text="@string/jollof_rice_with_chicken"
+                            android:onClick="onCheckedQuestion1"/>
 
-                            <RadioButton
-                                android:id="@+id/wheatRiceOneRadioButton"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:padding="@dimen/radioButton_padding"
-                                android:layout_marginLeft="@dimen/radioButton_marginLeft"
-                                android:layout_marginRight="@dimen/radioButton_marginRight"
-                                android:text="@string/wheat_rice_with_chicken"
-                                android:onClick="onCheckedQuestion1"/>
+                        <RadioButton
+                            android:id="@+id/wheatRiceOneRadioButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/radioButton_style"
+                            android:text="@string/wheat_rice_with_chicken"
+                            android:onClick="onCheckedQuestion1"/>
 
-                            <RadioButton
-                                android:id="@+id/gumboOneRadioButton"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:padding="@dimen/radioButton_padding"
-                                android:layout_marginLeft="@dimen/radioButton_marginLeft"
-                                android:layout_marginRight="@dimen/radioButton_marginRight"
-                                android:text="@string/gumbo_with_chicken"
-                                android:onClick="onCheckedQuestion1"/>
+                        <RadioButton
+                            android:id="@+id/gumboOneRadioButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/radioButton_style"
+                            android:text="@string/gumbo_with_chicken"
+                            android:onClick="onCheckedQuestion1"/>
 
                     </RadioGroup>
 
@@ -128,9 +117,7 @@
                 android:id="@+id/question_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="@dimen/activity_margin"
-                android:elevation="4dp"
+                style="@style/question234_cardView_style"
                 app:cardBackgroundColor="@android:color/white"
                 card_view:cardCornerRadius="@dimen/cardView_cornerRadius">
 
@@ -154,36 +141,28 @@
                         android:id="@+id/bankuCheckBox"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="@dimen/checkBox_padding"
-                        android:layout_marginLeft="@dimen/checkBox_marginLeft"
-                        android:layout_marginRight="@dimen/checkBox_marginRight"
+                        style="@style/checkbox_button_style"
                         android:text="@string/banku" />
 
                     <CheckBox
                         android:id="@+id/luwonboCheckBox"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="@dimen/checkBox_padding"
-                        android:layout_marginLeft="@dimen/checkBox_marginLeft"
-                        android:layout_marginRight="@dimen/checkBox_marginRight"
+                        style="@style/checkbox_button_style"
                         android:text="@string/luwonbo" />
 
                     <CheckBox
                         android:id="@+id/irioCheckBox"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="@dimen/checkBox_padding"
-                        android:layout_marginLeft="@dimen/checkBox_marginLeft"
-                        android:layout_marginRight="@dimen/checkBox_marginRight"
+                        style="@style/checkbox_button_style"
                         android:text="@string/irio" />
 
                     <CheckBox
                         android:id="@+id/ebaCheckBox"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="@dimen/checkBox_padding"
-                        android:layout_marginLeft="@dimen/checkBox_marginLeft"
-                        android:layout_marginRight="@dimen/checkBox_marginRight"
+                        style="@style/checkbox_button_style"
                         android:text="@string/eba"
                         android:layout_marginBottom="@dimen/activity_vertical_margin"/>
 
@@ -202,9 +181,7 @@
                 android:id="@+id/question_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="@dimen/activity_margin"
-                android:elevation="4dp"
+                style="@style/question234_cardView_style"
                 app:cardBackgroundColor="@android:color/white"
                 card_view:cardCornerRadius="@dimen/cardView_cornerRadius">
 
@@ -228,36 +205,28 @@
                         android:id="@+id/nigeriaQ3CheckBox"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="@dimen/checkBox_padding"
-                        android:layout_marginLeft="@dimen/checkBox_marginLeft"
-                        android:layout_marginRight="@dimen/checkBox_marginRight"
+                        style="@style/checkbox_button_style"
                         android:text="@string/nigeria"/>
 
                     <CheckBox
                         android:id="@+id/ghanaQ3CheckBox"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="@dimen/checkBox_padding"
-                        android:layout_marginLeft="@dimen/checkBox_marginLeft"
-                        android:layout_marginRight="@dimen/checkBox_marginRight"
+                        style="@style/checkbox_button_style"
                         android:text="@string/ghana"/>
 
                     <CheckBox
                         android:id="@+id/tunisiaCheckBox"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="@dimen/checkBox_padding"
-                        android:layout_marginLeft="@dimen/checkBox_marginLeft"
-                        android:layout_marginRight="@dimen/checkBox_marginRight"
+                        style="@style/checkbox_button_style"
                         android:text="@string/tunisia"/>
 
                     <CheckBox
                         android:id="@+id/wakandaCheckBox"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="@dimen/checkBox_padding"
-                        android:layout_marginLeft="@dimen/checkBox_marginLeft"
-                        android:layout_marginRight="@dimen/checkBox_marginRight"
+                        style="@style/checkbox_button_style"
                         android:text="@string/wakanda"
                         android:layout_marginBottom="@dimen/activity_vertical_margin"/>
 
@@ -276,9 +245,7 @@
                 android:id="@+id/question_4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="@dimen/activity_margin"
-                android:elevation="4dp"
+                style="@style/question234_cardView_style"
                 app:cardBackgroundColor="@android:color/white"
                 card_view:cardCornerRadius="@dimen/cardView_cornerRadius">
 
@@ -308,11 +275,8 @@
                         android:id="@+id/question_4EditTextID"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/question4txt_marginLeft"
-                        android:layout_marginRight="@dimen/question4txt_marginRight"
-                        android:layout_marginBottom="@dimen/question4txt_marginBottom"
-                        android:hint="@string/which_country_is_it_found_in"
-                        android:layout_margin="@dimen/activity_margin"/>
+                        style="@style/question4_editText_style"
+                        android:hint="@string/which_country_is_it_found_in"/>
 
                     <TextView
                         android:layout_width="match_parent"
@@ -330,9 +294,7 @@
                 android:id="@+id/bonusQuestion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="@dimen/activity_margin"
-                android:elevation="4dp"
+                style="@style/question234_cardView_style"
                 app:cardBackgroundColor="@android:color/white"
                 card_view:cardCornerRadius="@dimen/cardView_cornerRadius">
 
@@ -401,9 +363,7 @@
                 android:id="@+id/details_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/activity_vertical_margin"
-                android:layout_marginLeft="@dimen/activity_horizontal_margin"
-                android:layout_marginRight="@dimen/activity_horizontal_margin">
+                style="@style/userName_rLayout_style">
 
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/name_textInputLayout"
@@ -415,6 +375,7 @@
                         android:id="@+id/name_textInputEditText"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:inputType="text"
                         android:hint="@string/enter_your_name_here" />
                 </android.support.design.widget.TextInputLayout>
 
@@ -422,34 +383,20 @@
                     android:id="@+id/submitResults"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
                     android:layout_below="@id/name_textInputLayout"
-                    android:layout_marginBottom="@dimen/button_marginBottom"
-                    android:layout_marginRight="@dimen/activity_horizontal_margin"
-                    android:background="@color/submitButton_color"
-                    android:elevation="4dp"
-                    android:text="@string/submit"
-                    android:onClick="submitResults"
-                    android:textColor="#fff"/>
+                    style="@style/submitButton_style"
+                    android:onClick="submitResults" />
 
                 <Button
                     android:id="@+id/tryAgain"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
                     android:layout_below="@id/name_textInputLayout"
-                    android:layout_marginBottom="@dimen/button_marginBottom"
-                    android:layout_marginRight="@dimen/activity_horizontal_margin"
-                    android:background="@color/tryagainButton_color"
-                    android:elevation="4dp"
-                    android:text="@string/try_again"
-                    android:onClick="tryAgain"
-                    android:textColor="#fff"/>
+                    style="@style/tryAgainButton_style"
+                    android:onClick="tryAgain" />
             </RelativeLayout>
             <!-- End Of User's Details -->
 
         </LinearLayout>
-
     </RelativeLayout>
-
 </ScrollView>

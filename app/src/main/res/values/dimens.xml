@@ -20,6 +20,7 @@
     <dimen name="cardView_cornerRadius">4dp</dimen>
     <dimen name="questions_marginLeft">26dp</dimen>
     <dimen name="questions_marginBottom">10dp</dimen>
+    <dimen name="elevation">4dp</dimen>
 
     <dimen name="radioButton_marginLeft">24dp</dimen>
     <dimen name="radioButton_marginRight">24dp</dimen>

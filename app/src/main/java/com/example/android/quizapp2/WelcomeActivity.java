@@ -18,15 +18,21 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class WelcomeActivity extends AppCompatActivity {
 
-    private ViewPager viewPager;
+    @BindView(R.id.view_pager) ViewPager viewPager;
     private MyViewPagerAdapter myViewPagerAdapter;
-    private LinearLayout dotsLayout;
+    @BindView(R.id.layoutDots) LinearLayout dotsLayout;
     private TextView[] dots;
     private int[] layouts;
-    private Button btnSkip, btnNext;
+    @BindView(R.id.btn_skip) Button btnSkip;
+    @BindView(R.id.btn_next) Button btnNext;
     private PrefManager prefManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,12 +51,7 @@ public class WelcomeActivity extends AppCompatActivity {
         }
 
         setContentView(R.layout.activity_welcome);
-
-        viewPager = (ViewPager) findViewById(R.id.view_pager);
-        dotsLayout = (LinearLayout) findViewById(R.id.layoutDots);
-        btnSkip = (Button) findViewById(R.id.btn_skip);
-        btnNext = (Button) findViewById(R.id.btn_next);
-
+        ButterKnife.bind(this);
 
         // layouts of all welcome sliders
         // add few more layouts if you want

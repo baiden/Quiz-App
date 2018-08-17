@@ -16,4 +16,74 @@
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
+
+    <!--Question 1 Card View Style-->
+    <style name="question1_cardView_style">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:elevation">@dimen/elevation</item>
+        <item name="android:layout_marginLeft">@dimen/activity_horizontal_margin</item>
+        <item name="android:layout_marginRight">@dimen/activity_horizontal_margin</item>
+        <item name="android:layout_marginBottom">@dimen/activity_vertical_margin</item>
+    </style>
+
+    <!--Questions 234 Card View Style-->
+    <style name="question234_cardView_style">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:elevation">@dimen/elevation</item>
+        <item name="android:layout_margin">@dimen/activity_margin</item>
+    </style>
+
+    <!--Submit Button Style-->
+    <style name="submitButton_style">
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:elevation">@dimen/elevation</item>
+        <item name="android:layout_marginBottom">@dimen/button_marginBottom</item>
+        <item name="android:layout_marginRight">@dimen/activity_horizontal_margin</item>
+        <item name="android:background">@color/submitButton_color</item>
+        <item name="android:text">@string/submit</item>
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+
+    <!--Reset Button Style-->
+    <style name="tryAgainButton_style">
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:elevation">@dimen/elevation</item>
+        <item name="android:layout_marginBottom">@dimen/button_marginBottom</item>
+        <item name="android:layout_marginRight">@dimen/activity_horizontal_margin</item>
+        <item name="android:background">@color/tryagainButton_color</item>
+        <item name="android:text">@string/try_again</item>
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+
+    <!--Radio Button Style-->
+    <style name="radioButton_style">
+        <item name="android:layout_marginLeft">@dimen/radioButton_marginLeft</item>
+        <item name="android:layout_marginRight">@dimen/radioButton_marginRight</item>
+        <item name="android:padding">@dimen/radioButton_padding</item>
+    </style>
+
+    <!--Check Box Style-->
+    <style name="checkbox_button_style">
+        <item name="android:layout_marginLeft">@dimen/checkBox_marginLeft</item>
+        <item name="android:layout_marginRight">@dimen/checkBox_marginRight</item>
+        <item name="android:padding">@dimen/checkBox_padding</item>
+    </style>
+
+    <!--Question 4's EditText Style-->
+    <style name="question4_editText_style">
+        <item name="android:layout_marginLeft">@dimen/question4txt_marginLeft</item>
+        <item name="android:layout_marginRight">@dimen/question4txt_marginRight</item>
+        <item name="android:layout_marginBottom">@dimen/question4txt_marginBottom</item>
+        <item name="android:layout_margin">@dimen/activity_margin</item>
+        <item name="android:inputType">text</item>
+    </style>
+
+    <!--User's Name RelativeLayout Style-->
+    <style name="userName_rLayout_style">
+        <item name="android:layout_marginLeft">@dimen/activity_horizontal_margin</item>
+        <item name="android:layout_marginRight">@dimen/activity_horizontal_margin</item>
+        <item name="android:layout_marginBottom">@dimen/activity_margin</item>
+    </style>
+
+
 </resources>

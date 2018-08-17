@@ -21,9 +21,12 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity {
     Toolbar toolbar;
-    int totalQuizScore = 0; //Total Quiz Score
+    int totalQuizScore; //Total Quiz Score
     int eachQuizScore = 20; // Score for each question
     int bonusQuizScore = 20; // Score for bonus question
 
@@ -38,36 +41,36 @@ public class MainActivity extends AppCompatActivity {
     private boolean checked1;
 
     //Question 2
-    CheckBox withBanku;
-    CheckBox withLuwonbo;
-    CheckBox withIrio;
-    CheckBox withEba;
+    @BindView(R.id.bankuCheckBox) CheckBox withBanku;
+    @BindView(R.id.luwonboCheckBox) CheckBox withLuwonbo;
+    @BindView(R.id.irioCheckBox) CheckBox withIrio;
+    @BindView(R.id.ebaCheckBox) CheckBox withEba;
     private boolean isBanku;
     private boolean isLuwonbo;
     private boolean isIrio;
     private boolean isEba;
 
     //Question 3
-    CheckBox withNigeriaQ3;
-    CheckBox withGhanaQ3;
-    CheckBox withTunisia;
-    CheckBox withWakanda;
+    @BindView(R.id.nigeriaQ3CheckBox) CheckBox withNigeriaQ3;
+    @BindView(R.id.ghanaQ3CheckBox) CheckBox withGhanaQ3;
+    @BindView(R.id.tunisiaCheckBox) CheckBox withTunisia;
+    @BindView(R.id.wakandaCheckBox) CheckBox withWakanda;
     private boolean isNigeriaQ3;
     private boolean isGhanaQ3;
     private boolean isTunisia;
     private boolean isWakanda;
 
     //Question 4
-    EditText questionFourEditText;
+    @BindView(R.id.question_4EditTextID) EditText questionFourEditText;
 
     //Bonus Question
-    CheckBox withNigeria;
-    CheckBox withGhana;
+    @BindView(R.id.nigeriaCheckBox) CheckBox withNigeria;
+    @BindView(R.id.ghanaCheckBox) CheckBox withGhana;
     private boolean isNigeria;
     private boolean isGhana;
 
     //User's name
-    TextInputEditText name_textInputEditText;
+    @BindView(R.id.name_textInputEditText) TextInputEditText name_textInputEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,33 +80,25 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 
+        ButterKnife.bind(this);
     }
 
     //Submits the user's name and scores
     public void submitResults(View view) {
 
         //Question 2's Checkboxes
-        withBanku = (CheckBox) findViewById(R.id.bankuCheckBox);
-        withLuwonbo = (CheckBox) findViewById(R.id.luwonboCheckBox);
-        withIrio = (CheckBox) findViewById(R.id.irioCheckBox);
-        withEba = (CheckBox) findViewById(R.id.ebaCheckBox);
         isBanku = withBanku.isChecked();
         isLuwonbo = withLuwonbo.isChecked();
         isIrio = withIrio.isChecked();
         isEba = withEba.isChecked();
 
         //Question 3's Checkboxes
-        withNigeriaQ3 = (CheckBox) findViewById(R.id.nigeriaQ3CheckBox);
-        withGhanaQ3 = (CheckBox) findViewById(R.id.ghanaQ3CheckBox);
-        withTunisia = (CheckBox) findViewById(R.id.tunisiaCheckBox);
-        withWakanda = (CheckBox) findViewById(R.id.wakandaCheckBox);
         isNigeriaQ3 = withNigeriaQ3.isChecked();
         isGhanaQ3 = withGhanaQ3.isChecked();
         isTunisia = withTunisia.isChecked();
         isWakanda = withWakanda.isChecked();
 
         //Question 4's EditText
-        questionFourEditText = (EditText) findViewById(R.id.question_4EditTextID);
         String questionFourInput = questionFourEditText.getText().toString();
 
         //Question 5's Checkboxes
@@ -151,7 +146,6 @@ public class MainActivity extends AppCompatActivity {
                         }
                         else {
 
-                            name_textInputEditText = (TextInputEditText) findViewById(R.id.name_textInputEditText);
                             String name = name_textInputEditText.getText().toString();
 
                             /* ************ Validates User's name *****************/
@@ -390,10 +384,8 @@ public class MainActivity extends AppCompatActivity {
     /* ****************************** End of Bonus Question ***********************************/
 
 
-
     /* ******* Resets the values whenever a question is skipped so that it doesn't affect the final score ****************/
     public void resetScoreValues(){
-//        questionOneResults = 0;
         questionTwoResults = 0;
         questionThreeResults = 0;
         questionFourResults = 0;
@@ -411,7 +403,6 @@ public class MainActivity extends AppCompatActivity {
         submitBtn.setEnabled(false);
         submitBtn.setBackgroundResource(R.color.colorDanger);
         submitBtn.setText(R.string.resultsSubmitted);
-
     }
 
 }

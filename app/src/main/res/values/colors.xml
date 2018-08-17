@@ -7,6 +7,7 @@
     <color name="mainRelative_colorGrey">#f5f5f5</color>
     <color name="submitButton_color">#03a9f4</color>
     <color name="tryagainButton_color">#00796b</color>
+    <color name="text_color">#fff</color>
 
     <!-- Screens background color-->
     <color name="bg_screen1">#f64c73</color>
